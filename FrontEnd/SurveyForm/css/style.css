@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+:root {
+  --h1-size: 3.2vw;
+  --h2-size: 2.4vw;
+  --margin-small: 2vw;
+  --p-size: 1.6vw;
+}
+
+a {
+  color: white;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  border-style: none;
+  font-family: "Raleway", sans-serif;
+  font-size: var(--h2-size);
+  background-color: #BF8640;
+  color: white;
+  margin: 0 auto var(--margin-small) auto;
+  padding: 0.5em;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #4079BF;
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: var(--h1-size);
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: var(--h2-size);
+  color: white;
+  margin: 0 auto var(--margin-small) auto;
+}
+
+header,
+footer {
+  background-color: #BF8640;
+  padding: var(--margin-small) 0;
+}
+
+hr {
+  margin: var(--margin-small) -10vw calc(2 * var(--margin-small)) -10vw;
+}
+
+input {
+  font-family: "Raleway", sans-serif;
+  font-size: var(--p-size);
+  margin: 0 auto var(--margin-small) auto;
+  padding: 0.5em;
+}
+
+label {
+  font-family: "Raleway", sans-serif;
+  font-size: var(--p-size);
+  color: white;
+  display: inline-block;
+  margin: 0 auto var(--margin-small) auto;
+}
+
+main {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url(https://ksassets.timeincuk.net/wp/uploads/sites/54/2018/07/860072-1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: var(--margin-small) 10vw;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: var(--p-size);
+  text-align: center;
+  color: white;
+  line-height: 2em;
+  margin: 0 auto;
+}
+
+select {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  border-style: none;
+  font-family: "Raleway", sans-serif;
+  font-size: var(--p-size);
+  background-color: white;
+  height: 2em;
+  margin: 0 auto var(--margin-small) auto;
+  width: 100%;
+}
+
+textarea {
+  font-family: "Raleway", sans-serif;
+  font-size: var(--p-size);
+  margin: 0 auto var(--margin-small) auto;
+  padding: 0.5em;
+  resize: none;
+}
+
+.textfield {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  border-style: none;
+  width: calc(100% - 1em);
+}
+
+#survey-form {
+  -webkit-border-radius: var(--margin-small);
+  -moz-border-radius: var(--margin-small);
+  -o-border-radius: var(--margin-small);
+  border-radius: var(--margin-small);
+  background-color: rgba(27, 27, 50, 0.8);
+  padding: var(--margin-small) 10vw;
+}
+
+@media screen and (max-width: 625px) {
+  :root {
+    --h1-size: 20px;
+    --h2-size: 15px;
+    --margin-small: 12px;
+    --p-size: 10px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  :root {
+    --h1-size: 32px;
+    --h2-size: 24px;
+    --margin-small: 20px;
+    --p-size: 16px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,197 @@
+/* Variables */
+/* Mixins */
+/* Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(45deg, #0099FF, #004C7F);
+  min-height: 100vh;
+}
+
+/* Wrapper Styling */
+#app {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+}
+
+.wrapper {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  display: flex;
+  margin: 20px;
+}
+
+#clock-wrapper {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid white;
+  height: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+}
+
+.danger {
+  background-color: #B8533D;
+}
+
+#clock {
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+}
+
+#button-wrapper {
+  margin: 20px auto 0 auto;
+}
+
+#reset {
+  margin-left: 20px;
+}
+
+#break-label,
+#author-label {
+  margin-top: 20px;
+}
+
+/* Button Styling */
+button {
+  outline: none;
+}
+
+#start_stop,
+#reset {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  background-color: #0099FF;
+  border: none;
+  height: 34px;
+  width: calc(2 * 45px);
+}
+
+#start_stop:hover,
+#reset:hover,
+.stepper:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  background-color: #17B0AD;
+}
+
+.stepper {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  background-color: #0099FF;
+  border: none;
+  display: flex;
+  height: 34px;
+  margin: 10px auto 0 auto;
+  overflow: hidden;
+  width: calc(3 * 45px);
+}
+
+.stepper-button {
+  background-color: inherit;
+  border: none;
+  height: 100%;
+  width: 45px;
+}
+
+.stepper-text {
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  background-color: white;
+  display: flex;
+  margin: 2px 0;
+  width: 45px;
+}
+
+/* Text Styling */
+.text-sm {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+.text-lg {
+  font-family: "Orbitron", sans-serif;
+  font-size: 40px;
+}
+
+.text-light {
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Media Queries */
+@media screen and (min-width: 576px) {
+  #app {
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+  }
+
+  .wrapper {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    width: 248px;
+  }
+}
+@media screen and (max-width: 576px) and (min-height: 503px) {
+  #app {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,148 @@
+$box-shadow: 0 10px 20px #4D4D4D;
+$color-gray: #FAFAFA;
+$font-main: 'Avenir-Light', sans-serif;
+$margin: 20px;
+$margin-double: 40px;
+
+@mixin fonts($size) {
+	font-family: 'Avenir-Light', sans-serif;
+	font-size: $size;
+	text-align: center;
+}
+
+@mixin border-radius() {
+	-webkit-border-radius: $margin;
+	-moz-border-radius: $margin;
+	-o-border-radius: $margin;
+	border-radius: $margin;
+}
+
+@mixin box-shadow() {
+	-webkit-box-shadow: $box-shadow;
+	-moz-box-shadow: $box-shadow;
+	-o-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+}
+
+@mixin justify-content() {
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-o-justify-content: center;
+	justify-content: center;
+}
+
+a {
+	color: blue;
+	text-decoration: none;
+}
+
+body {
+	background: repeating-linear-gradient(45deg, $color-gray 0, $color-gray $margin, white $margin, white $margin-double);
+	margin: $margin;
+}
+
+figcaption {
+	@include fonts(16px);
+	margin-top: $margin;
+}
+
+h1 {
+	@include fonts(32px);
+	margin-bottom: 0;}
+
+h2,
+p {
+	@include fonts(16px);
+}
+
+hr {
+	margin: $margin;
+}
+
+.div-albums {
+	@include justify-content();
+	display: grid;
+	grid-gap: $margin;
+	grid-template-rows: 1fr;
+	width: 100%;
+}
+
+.img-album {
+	@include border-radius();
+	@include box-shadow();
+	height: auto;
+	width: 100%;
+}
+
+#description {
+	margin-top: 0;
+}
+
+#image {
+	@include border-radius();
+	display: block;
+	height: auto;
+	margin: $margin auto 0 auto;
+	max-width: 100%;
+}
+
+#img-div {
+	@include border-radius();
+	@include box-shadow();
+	background-color: #E6E6E6;
+	height: auto;
+	margin: 0;
+	padding: $margin;
+}
+
+#tribute-info {
+	margin: $margin-double auto $margin auto;
+}
+
+@each $num in 2, 4, 7 {
+	.grid-#{$num} {
+		grid-template-columns: repeat($num, 100px);
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.grid-7 {
+		grid-template-columns: repeat(6, 100px);
+	}
+}
+
+@media screen and (max-width: 740px) {
+	.grid-7 {
+		grid-template-columns: repeat(5, 100px);
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.grid-7 {
+		grid-template-columns: repeat(4, 100px);
+	}
+}
+
+@media screen and (max-width: 500px) {
+	@each $num in 4, 7 {
+		.grid-#{$num} {
+			grid-template-columns: repeat(3, 100px);
+		}
+	}
+}
+
+@media screen and (max-width: 380px) {
+	@each $num in 4, 7 {
+		.grid-#{$num} {
+			grid-template-columns: repeat(2, 100px);
+		}
+	}
+}
+
+@media screen and (max-width: 260px) {
+	@each $num in 2, 4, 7 {
+		.grid-#{$num} {
+			grid-template-columns: repeat(1, 100px);
+		}
+	}
+}

@@ -1,0 +1,205 @@
+/* Variables */
+
+$box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+$color-aqua: #17B0AD;
+$color-blue: #0099FF;
+$color-blue-dark: #004C7F;
+$color-red: #B8533D;
+$montserrat: 'Montserrat', sans-serif;
+$orbitron: 'Orbitron', sans-serif;
+$margin: 20px;
+$margin-half: 10px;
+$stepper-height: 34px;
+$stepper-width: 45px;
+
+/* Mixins */
+
+@mixin align-items($align) {
+	-webkit-align-items: $align;
+	align-items: $align;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-o-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin flex-direction($direction) {
+	-webkit-flex-direction: $direction;
+	-moz-flex-direction: $direction;
+	-o-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+@mixin justify-content($justify) {
+	-webkit-justify-content: $justify;
+	-moz-justify-content: $justify;
+	-o-justify-content: $justify;
+	justify-content: $justify;
+}
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-o-transform: $transform;
+	transform: $transform;
+}
+
+/* Global Styling */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: linear-gradient(45deg, $color-blue, $color-blue-dark);
+	min-height: 100vh;
+}
+
+/* Wrapper Styling */
+
+#app {
+	@include flex-direction(column);
+	display: flex;
+	min-height: 100vh;
+}
+
+.wrapper {
+	@include flex-direction(column);
+	display: flex;
+	margin: $margin;
+}
+
+#clock-wrapper {
+	@include border-radius(50%);
+	border: 2px solid white;
+	height: 180px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 180px;
+}
+
+.danger {
+	background-color: $color-red;
+}
+
+#clock {
+	@include transform(translateY(-50%));
+	position: relative;
+	top: 50%;
+}
+
+#button-wrapper {
+	margin: $margin auto 0 auto;
+}
+
+#reset {
+	margin-left: $margin;
+}
+
+#break-label,
+#author-label {
+	margin-top: $margin;
+}
+
+/* Button Styling */
+
+button {
+	outline: none;
+}
+
+#start_stop,
+#reset {
+	@include border-radius(10px);
+	@include box-shadow($box-shadow);
+	background-color: $color-blue;
+	border: none;
+	height: $stepper-height;
+	width: calc(2 * #{$stepper-width});
+}
+
+#start_stop:hover,
+#reset:hover,
+.stepper:hover {
+	@include box-shadow($box-shadow);
+	background-color: $color-aqua;
+}
+
+.stepper {
+	@include border-radius(10px);
+	@include box-shadow($box-shadow);
+	@include justify-content(center);
+	background-color: $color-blue;
+	border: none;
+  display: flex;
+  height: $stepper-height;
+  margin: $margin-half auto 0 auto;
+  overflow: hidden;
+  width: calc(3 * #{$stepper-width});
+}
+
+.stepper-button {
+	background-color: inherit;
+  border: none;
+  height: 100%;
+  width: $stepper-width;
+}
+
+.stepper-text {
+	@include align-items(center);
+	@include border-radius(5px);
+	@include justify-content(center);
+	background-color: white;
+	display: flex;
+	margin: 2px 0;
+  width: $stepper-width;
+}
+
+/* Text Styling */
+
+.text-sm {
+	font-family: $montserrat;
+	font-size: 16px;
+}
+
+.text-lg {
+	font-family: $orbitron;
+	font-size: 40px;
+}
+
+.text-light{
+	color: white;
+}
+
+.text-center {
+	text-align: center;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 576px) {
+	#app {
+		@include flex-direction(row);
+		@include justify-content(center);
+	}
+	.wrapper {
+		@include justify-content(center);
+		width: 248px;
+	}
+}
+
+@media screen and (max-width: 576px) and (min-height: 503px) {
+	#app {
+		@include justify-content(center);
+	}
+}

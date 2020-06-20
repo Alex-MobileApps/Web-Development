@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>An Introduction to Swift</title>
+</head>
+<body>
+
+<!--NAV BAR------------------------------------------------------------------------------>
+
+	<nav id="navbar">
+		<header>An Introduction to Swift</header>
+		<ul>
+			<li><a class="nav-link" href="#About">About</a></li>
+			<li><a class="nav-link" href="#Constants_and_Variables">Constants and Variables</a></li>
+			<li><a class="nav-link" href="#Comments_and_Printing">Comments and Printing</a></li>
+			<li><a class="nav-link" href="#Conditional_Statements">Conditional Statements</a></li>
+			<li><a class="nav-link" href="#Functions">Functions</a></li>
+		</ul>
+	</nav>
+
+<!--MAIN--------------------------------------------------------------------------------->
+
+	<main id="main-doc">
+		
+<!--ABOUT-------------------------------------------------------------------------------->
+
+		<img src="https://live.staticflickr.com/65535/49220028703_dba298f2d7_o.jpg" alt="An image of the Swift logo">
+		<section class="main-section" id="About">
+			<header>About</header>
+			<article>
+				<p>Swift is a programming language developed by Apple Inc. for use on iOS, macOS, watchOS, tvOS and more. It was intended to support many concepts from Objective-C, but in a safer way. The compiler is optimised for performance and the language is optimised for development.</p>
+				<p>Swift avoids many common programming errors:</p>
+				<ul>
+					<li>Variables are always initialised before use.</li>
+					<li>Array indices are checked for out-of-bounds errors.</li>
+					<li>Integers are checked for overflow.</li>
+					<li>Handling of <samp><span class="pink">nil</span></samp> values with Optionals.</li>
+					<li>Memory is automatically managed</li>
+				</ul>
+				<p>Swift was released in 2014. It has been open source late 2015. This documentation has been updated to match the release of Swift 5.1.</p>
+			</article>
+		</section>
+		<hr>
+
+<!--CONSTANTS AND VARIABLES-------------------------------------------------------------->
+
+		<section class="main-section" id="Constants_and_Variables">
+			<header>Constants and Variables</header>
+			<article>
+				<p>A constant or variable is used to associate a name with a value of a certain type. They must be declared before they are used. Swift is quite intellient, it can often infer the type of value you are using without needed to explicitly declare it yourself.</p>
+				<p>Constants are immutable and are declared with the <samp><span class="pink">let</span></samp> keyword. For example:</p>
+				<pre><code><span class="pink">let</span> myName = <span class="red">&quot;Alex&quot;</span></code></pre>
+				<p>Variables are mutuable and are declared with the <samp><span class="pink">var</span></samp> keyword. For example:</p>
+				<pre><code><span class="pink">var</span> remainingTime = <span class="blue">9</span></code></pre>
+				<p>As you can see above, Swift was able to determine that <samp>myName</samp> is a string and <samp>remainingTime</samp> is an integer without having to state it. The two values could also be annotated like this:</p>
+				<pre><code><span class="pink">let</span> myName: <span class="purple">String</span> = <span class="red">&quot;Alex&quot;</span><br><span class="pink">var</span> remainingTime: <span class="purple">Int</span> = <span class="blue">9</span></code></pre>	
+				<p>Optionals are a powerful feature in Swift. An optional is a variable than can hold the value <samp><span class="pink">nil</span></samp>. Here is an example of the creation of an optional variable:</p>
+				<pre><code><span class="pink">var</span> firstCaller: <span class="purple">String</span>?</code></pre>
+				<p>If you know an optional value is going to be set when it is called, it can be implicitly unwrapped by using an exclamation mark:</p>
+				<pre><code><span class="pink">var</span> winningNumber: <span class="purple">Int</span>!</code></pre>
+			</article>
+		</section>
+		<hr>
+
+<!--COMMENTS AND PRINTING---------------------------------------------------------------->
+
+		<section class="main-section" id="Comments_and_Printing">
+			<header>Comments and Printing</header>
+			<article>
+				<p>Comments are used to include nonexecutable text within your code. They are ignored by the Swift compiler when executing. A single line comment begins with two forward slashes (<samp><span class="green">//...</span></samp>) and a multiline comment is enclosed in a forward slash and an asterisk (<samp><span class="green">/*...*/</span></samp>).</p>
+				<pre><code><span class="green">// This is a single line comment.<br>/* This is a<br>multiline comment. */</span></code></pre>
+				<p>The value of a constant or variable can be printed with the <samp><span class="purple">print</span>(_:separator:terminator:)</samp> function. In our earlier example, we could print our name to the console:</p>
+				<pre><code><span class="purple">print</span>(myName)<br><span class="green">//Prints &quot;Alex&quot;</span></code></pre>
+				<p>Swift uses String Interpolation to allow constants and variables to be included in a longer string. This can be seen in the following <samp><span class="purple">print</span></samp> statement:</p>
+				<pre><code><span class="purple">print</span>(<span class="red">&quot;Attention</span> \<span class="red">(</span>myName<span class="red">), you have</span> \<span class="red">(</span>remainingTime<span class="red">) minutes remaining!&quot;</span>)<br><span class="green">//Prints &quot;Attention Alex, you have 9 minutes remaining!&quot;</span></code></pre>
+			</article>
+		</section>
+		<hr>
+
+<!--CONDITIONAL STATEMENTS--------------------------------------------------------------->
+
+		<section class="main-section" id="Conditional_Statements">
+			<header>Conditional Statements</header>
+			<article>
+				<p>It is often important when coding to use different code depending on certain conditions. For example, you might want to display a congratulations message when something is successful, or the opposite otherwise.</p>
+				<p>The <samp><span class="pink">if</span></samp> statement is used to execute code if a condition is <samp><span class="pink">true</span></samp>. For example:</p>
+				<pre><code><span class="pink">if</span> remainingTime == <span class="blue">0</span> {<br>    <span class="purple">print</span>(<span class="red">&quot;You are out of time!&quot;</span>)<br>}<br><span class="green">//Nothing is printed as remainingTime does not equal 0</span></code></pre>
+				<p>The <samp><span class="pink">else</span></samp> statement can be paired with an <samp><span class="pink">if</span></samp> statement to offer an alternative if the <samp><span class="pink">if</span></samp> statement returns <samp><span class="pink">false</span></samp>. Using our example above:</p>
+				<pre><code><span class="pink">if</span> remainingTime == <span class="blue">0</span> {<br>    <span class="purple">print</span>(<span class="red">&quot;You are out of time!&quot;</span>)<br>} <span class="pink">else</span> {<br>    <span class="purple">print</span>(<span class="red">&quot;You still have time!&quot;</span>)<br>}<br><span class="green">//Prints &quot;You still have time!&quot;</span></code></pre>
+				<p>Another important conditional statement available in Swift is the <samp><span class="pink">switch</span></samp> statement. A <samp><span class="pink">switch</span></samp> statement is like an <samp><span class="pink">if else</span></samp> statement but it allows for multiple cases without having to re-evaluate the condition each time. This statement must be exhaustive, that is that every possible case must be included in the <samp><span class="pink">switch</span></samp> statement. If you can&apos;t provide a case for every value, the <samp><span class="pink">default</span></samp> keyword must be used for all other possible values.</p>
+				<pre><code><span class="pink">let</span> myPasta: <span class="purple">String</span> = <span class="red">&quot;Carbonara&quot;</span><br><span class="pink">switch</span> myPasta {<br><span class="pink">case</span> <span class="red">&quot;Marinara&quot;</span>:<br>    <span class="purple">print</span>(<span class="red">&quot;This is a seafood dish&quot;</span>)<br><span class="pink">case</span> <span class="red">&quot;Carbonara&quot;</span>:<br>    <span class="purple">print</span>(<span class="red">&quot;This is a cheese and egg dish&quot;</span>)<br><span class="pink">case</span> <span class="red">&quot;Bolognese&quot;</span>:<br>    <span class="purple">print</span>(<span class="red">&quot;This is a meat dish&quot;</span>)<br><span class="pink">default</span>:<br>    <span class="purple">print</span>(<span class="red">&quot;This is another pasta sauce&quot;</span>)<br>}<br><span class="green">//Prints &quot;This is a cheese and egg dish&quot;</span></code></pre>
+			</article>
+		</section>
+		<hr>
+
+<!--FUNCTIONS---------------------------------------------------------------------------->
+
+		<section class="main-section" id="Functions">
+			<header>Functions</header>
+			<article>
+				<p>A function is a group of code that is used to perform a certain task. Every function must have a name and begin with the <samp><span class="pink">func</span></samp> keyword. When a function is called, the code contained within is executed. For example, we might create the following function:</p>
+				<pre><code><span class="pink">func</span> getDetails() {<br>    <span class="purple">print</span>(<span class="red">&quot;Name:</span> \<span class="red">(</span>myName<span class="red">), Favourite Pasta:</span> \<span class="red">(</span>myPasta<span class="red">)&quot;</span>)<br>}</code></pre>
+				<p>We can now run this code by calling the function:</p>
+				<pre><code><span class="green-dark">getDetails</span>()<br><span class="green">//Prints &quot;Name: Alex, Favourite Pasta: Carbonara&quot;</span></code></pre>
+				<p>At the moment our function is pretty rigid. What if we want to use values other than our own name and our favourite pasta? We can do this by adding input values to the function just like this:</p>
+				<pre><code><span class="pink">func</span> getDetails(name: <span class="purple">String</span>, pasta: <span class="purple">String</span>) {<br>    <span class="purple">print</span>(<span class="red">&quot;Name:</span> \<span class="red">(</span>name<span class="red">), Favourite Pasta:</span> \<span class="red">(</span>pasta<span class="red">)&quot;</span>)<br>}</code></pre>
+				<p>If we run our new code with the strings <samp><span class="red">&quot;Sam&quot;</span></samp> and <samp><span class="red">&quot;Bolognese&quot;</span></samp> we would get:</p>
+				<pre><code><span class="green-dark">getDetails</span>(name: <span class="red">&quot;Sam&quot;</span>, pasta: <span class="red">&quot;Bolognese&quot;</span>)<br><span class="green">//Prints &quot;Name: Sam, Favourite Pasta: Bolognese&quot;</span></code></pre>
+				<p>Functions can also have <samp><span class="pink">return</span></samp> types. A variable or constant can be set using the value returned from a function. Here is an example of a function with a string return type:</p>
+				<pre><code><span class="pink">func</span> isItBolognese(name: <span class="purple">String</span>, pasta: <span class="purple">String</span>) -&gt; <span class="purple">String</span> {<br>    <span class="pink">if</span> pasta == <span class="red">&quot;Bolognese&quot;</span> {<br>        <span class="pink">return</span> <span class="red">&quot;Yes, it is Bolognese&quot;</span><br>    } <span class="pink">else</span> {<br>        <span class="pink">return</span> <span class="red">&quot;No, it is another sauce&quot;</span><br>    }<br>}</code></pre>
+				<p>And when called, here is our output:</p>
+				<pre><code><span class="green-dark">isItBolognese</span>(name: myName, pasta: myPasta)<br><span class="green">//Returns &quot;No, it is another sauce&quot;</span></code></pre>
+				<p>To learn more about Swift, view the <a href="https://swift.org/documentation/" target="_blank">documentation from Apple</a> here.</p>
+			</article>
+		</section>
+		<hr>
+	</main>
+
+<!--FOOTER------------------------------------------------------------------------------->
+
+	<footer>
+		Swift logo courtesy of <a href="https://icons-for-free.com/bird+code+ios+logo+swift+icon-1320184804319721391/" target="_blank">icons-for-free.com</a><br>Created by Alex
+	</footer>
+</body>
+</html>

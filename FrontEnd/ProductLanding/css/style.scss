@@ -1,0 +1,260 @@
+$box-shadow: 0 10px 20px #7D7D7D;
+$gray: #EBEBF1;
+$green: #009999;
+$green-light: #00AAAA;
+$header-small: 50px;
+$margin: 20px;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+@mixin border-radius() {
+	-webkit-border-radius: $margin;
+	-moz-border-radius: $margin;
+	-o-border-radius: $margin;
+	border-radius: $margin;
+}
+
+@mixin borders() {
+	@include border-radius();
+	border-style: none;
+}
+
+@mixin box-shadow() {
+	-webkit-box-shadow: $box-shadow;
+	-moz-box-shadow: $box-shadow;
+	-o-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+}
+
+@mixin flex-direction() {
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+}
+
+@mixin fonts($size) {
+	font-family: 'Montserrat', sans-serif;
+	font-size: $size;
+	text-align: center;
+}
+
+@mixin justify-content() {
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-o-justify-content: center;
+	justify-content: center;
+}
+
+:root {
+	--height-header: 50px;
+	--width-about: 700px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	@include fonts(14px);
+	color: white;
+}
+
+footer {
+	background-color: $green-light;
+	color: white;
+	padding: 1em;
+}
+
+form {
+	margin: $margin $margin 0 $margin;
+}
+
+h1 {
+	@include fonts(20px);
+	color: white;
+	margin: auto $margin;
+}
+
+h2 {
+	@include fonts(30px);
+	margin: $margin auto 0 auto;
+}
+
+h3 {
+	@include fonts(17px);
+}
+
+header {
+	display: flex;
+	height: var(--height-header);
+	position: fixed;
+	width: 100%;
+}
+
+hr {
+	margin-top: $margin;
+}
+
+iframe {
+	display: block;
+	height: calc(0.5625 * var(--width-about));
+	margin: $margin auto 0 auto;
+	max-width: 100%;
+	width: var(--width-about);
+}
+
+input {
+	@include fonts(14px);
+	margin: $margin auto 0 auto;
+}
+
+label {
+	@include fonts(14px);
+	display: block;
+	margin: 0 auto;
+}
+
+li {
+	@include fonts(14px);
+}
+
+main {
+	margin-top: var(--height-header);
+	padding-bottom: $margin;
+}
+
+nav {
+	background-color: $green;
+	height: $header-small;
+	width: 35%;
+}
+
+p {
+	@include fonts(14px);
+	margin: 0 auto;
+}
+
+.about-img {
+	display: block;
+	height: $header-small;
+	margin: auto 0 auto $margin;
+	width: $header-small;
+}
+
+.about-internal-div,
+.pricing-internal-div {
+	margin: $margin;
+}
+
+.about-section {
+	@include border-radius();
+	@include box-shadow();
+	background-color: $gray;
+	display: flex;
+	margin: $margin auto 0 auto;
+	max-width: var(--width-about);
+	width: 100%;
+}
+
+.li-nav {
+	margin: auto;
+}
+
+.nav-link {
+	text-decoration: none;
+}
+
+.offset {
+	margin-top: calc(-1 * var(--height-header));
+	padding-top: var(--height-header);
+}
+
+.pricing-li {
+	list-style: none;
+	margin: 0 $margin;
+}
+
+.pricing-section {
+	@include borders();
+	@include box-shadow();
+	background-color: $gray;
+}
+
+#about-div {
+	margin-left: $margin;
+	margin-right: $margin;
+}
+
+#email {
+	display: block;
+	padding: 0.5em;
+}
+
+#header-img {
+	display: block;
+	height: 40px;
+	margin: 5px 0 $header-small $margin;
+	width: auto;
+}
+
+#header-left {
+	@include justify-content();
+	background-color: $green-light;
+	display: flex;
+	height: $header-small;
+	width: 65%;
+}
+
+#pricing-grid {
+	display: grid;
+	grid-gap: $margin;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	margin: $margin $margin 0 $margin;
+}
+
+#submit {
+	@include borders();
+	background-color: $green-light;
+	color: white;
+	display: block;
+	padding: 1em;	
+}
+
+#submit:hover {
+	background-color: $green;
+}
+
+#ul-nav {
+	display: flex;
+	height: 100%;
+	list-style: none;
+}
+
+@media screen and (max-width: 700px) { 
+	:root {
+		--height-header: 100px;
+		--width-about: calc(100vw - 40px);
+	}
+
+	header {
+		@include flex-direction();
+	}
+
+	nav,
+	#header-left {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.about-img {
+		margin: $margin auto 0 auto;
+	}
+
+	.about-section {
+		@include flex-direction();
+		@include justify-content();
+	}
+}	

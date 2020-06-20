@@ -1,0 +1,147 @@
+$color-gray-dark: #111111;
+$box-shadow: 0 10px 20px $color-gray-dark;
+$font-family: 'Cambay', sans-serif;
+$margin: 20px;
+$height-toolbar: 40px;
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-o-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin box-sizing($sizing) {
+	-webkit-box-sizing: $sizing;
+	-moz-box-sizing: $sizing;
+	-o-box-sizing: $sizing;
+	box-sizing: $sizing;
+}
+
+@mixin font($size) {
+	font-family: $font-family;
+	font-size: $size;
+}
+
+@mixin overflow-x($overflow) {
+	-ms-overflow-x: $overflow;
+	overflow-x: $overflow;
+}
+
+@mixin overflow-y($overflow) {
+	-ms-overflow-y: $overflow;
+	overflow-y: $overflow;
+}
+
+@mixin resize($resize) {
+	-moz-resize: $resize;
+	resize: $resize;
+}
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-o-transform: $transform;
+	transform: $transform;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: linear-gradient(45deg, #222222, #555555);
+}
+
+.wrapper {
+	@include box-shadow($box-shadow);
+	@include overflow-y(hidden);
+	margin: $margin;
+	min-height: 200px;
+}
+
+.wrapper-large {
+	height: calc(100vh - 2 * #{$margin});
+}
+
+.wrapper-small {
+	height: calc(50vh - 1.5 * #{$margin});
+}
+
+.toolbar {
+	@include font(16px);
+	background: linear-gradient(45deg, #555555, #777777);
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	height: $height-toolbar;
+	padding-left: 0.5em;
+	position: relative;
+}
+
+p {
+	margin: auto auto auto 0.5em;
+}
+
+#editor {
+	@include box-sizing(border-box);
+	@include font(16px);
+	@include resize(none);
+	border-style: none;
+	height: calc(100% - #{$height-toolbar});
+	padding: 0.5em;
+	width: 100%;
+}
+
+#preview {
+	@include overflow-y(auto);
+	font-family: $font-family;
+	background-color: white;
+	height: calc(100% - #{$height-toolbar});
+	padding: 0.5em;
+	* {
+		margin: 0.5em;
+	}
+	blockquote {
+		border-left: 3px solid $color-gray-dark;
+		margin-left: $margin;
+		padding-left: 5px;
+	}
+	code {
+		background-color: #EBEBF1;
+	}
+	img {
+		display: block;
+		height: auto;
+		max-width: calc(100% - 1em);
+	}
+	li {
+		margin-left: 1em;
+	}
+	pre {
+		@include overflow-x(auto);
+		background-color: #EBEBF1;
+		border-radius: 10px;
+		padding: 20px;
+	}
+	table {
+    border-collapse: collapse;
+  }
+  td,
+  th {
+    border: 2px solid $color-gray-dark;
+    padding: 5px;
+  }
+}
+
+.fas {
+	margin: auto 0.5em auto auto;
+}
+
+footer {
+	@include font(16px);
+	color: white;
+	margin: $margin auto;
+	text-align: center;
+}

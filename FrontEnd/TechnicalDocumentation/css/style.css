@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+a {
+  color: darkblue;
+  text-decoration: none;
+}
+
+article li {
+  margin: 0 40px;
+}
+
+body {
+  margin: 0;
+}
+
+code,
+samp {
+  font-family: Menlo, monospace;
+  font-size: 10px;
+  line-height: 2em;
+}
+
+footer {
+  font-family: system-ui, "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 2em;
+  margin: 20px auto;
+  text-align: center;
+}
+
+header {
+  font-family: system-ui, "Roboto", sans-serif;
+  font-size: 18px;
+  margin: 0 auto 0 20px;
+  padding-top: 20px;
+}
+
+hr {
+  margin-top: 20px;
+}
+
+img {
+  display: block;
+  height: auto;
+  margin: 20px auto 0 auto;
+  width: 50vw;
+}
+
+li {
+  font-family: system-ui, "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 2em;
+}
+
+nav {
+  -ms-overflow-y: auto;
+  overflow-y: auto;
+  background-color: #EBEBF1;
+}
+nav li {
+  margin-left: 20px;
+}
+
+p {
+  font-family: system-ui, "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 2em;
+  margin: 20px 40px 0 40px;
+}
+
+pre {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -ms-overflow-x: auto;
+  overflow-x: auto;
+  background-color: #EBEBF1;
+  margin: 20px 60px 0 60px;
+  padding: 1em;
+}
+
+.blue {
+  color: #1C00CF;
+}
+
+.green {
+  color: #007400;
+}
+
+.green-dark {
+  color: #3F6E74;
+}
+
+.pink {
+  color: #AA0D91;
+}
+
+.purple {
+  color: #5C2699;
+}
+
+.red {
+  color: #C41A16;
+}
+
+@media screen and (min-width: 385px) {
+  code,
+samp {
+    font-size: 2.6vw;
+  }
+
+  footer,
+li,
+p {
+    font-size: 3.2vw;
+  }
+
+  header {
+    font-size: 4.8vw;
+  }
+}
+@media screen and (min-width: 500px) {
+  code,
+samp {
+    font-size: 13px;
+  }
+
+  footer,
+li,
+p {
+    font-size: 16px;
+  }
+
+  header {
+    font-size: 24px;
+  }
+
+  img {
+    width: 250px;
+  }
+}
+@media screen and (min-width: 782px) {
+  footer,
+main {
+    margin-left: 282px;
+  }
+
+  nav {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 282px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

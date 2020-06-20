@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(45deg, #222222, #555555);
+}
+
+.wrapper {
+  -webkit-box-shadow: 0 10px 20px #111111;
+  -moz-box-shadow: 0 10px 20px #111111;
+  -o-box-shadow: 0 10px 20px #111111;
+  box-shadow: 0 10px 20px #111111;
+  -ms-overflow-y: hidden;
+  overflow-y: hidden;
+  margin: 20px;
+  min-height: 200px;
+}
+
+.wrapper-large {
+  height: calc(100vh - 2 * 20px);
+}
+
+.wrapper-small {
+  height: calc(50vh - 1.5 * 20px);
+}
+
+.toolbar {
+  font-family: "Cambay", sans-serif;
+  font-size: 16px;
+  background: linear-gradient(45deg, #555555, #777777);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  padding-left: 0.5em;
+  position: relative;
+}
+
+p {
+  margin: auto auto auto 0.5em;
+}
+
+#editor {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Cambay", sans-serif;
+  font-size: 16px;
+  -moz-resize: none;
+  resize: none;
+  border-style: none;
+  height: calc(100% - 40px);
+  padding: 0.5em;
+  width: 100%;
+}
+
+#preview {
+  -ms-overflow-y: auto;
+  overflow-y: auto;
+  font-family: "Cambay", sans-serif;
+  background-color: white;
+  height: calc(100% - 40px);
+  padding: 0.5em;
+}
+#preview * {
+  margin: 0.5em;
+}
+#preview blockquote {
+  border-left: 3px solid #111111;
+  margin-left: 20px;
+  padding-left: 5px;
+}
+#preview code {
+  background-color: #EBEBF1;
+}
+#preview img {
+  display: block;
+  height: auto;
+  max-width: calc(100% - 1em);
+}
+#preview li {
+  margin-left: 1em;
+}
+#preview pre {
+  -ms-overflow-x: auto;
+  overflow-x: auto;
+  background-color: #EBEBF1;
+  border-radius: 10px;
+  padding: 20px;
+}
+#preview table {
+  border-collapse: collapse;
+}
+#preview td,
+#preview th {
+  border: 2px solid #111111;
+  padding: 5px;
+}
+
+.fas {
+  margin: auto 0.5em auto auto;
+}
+
+footer {
+  font-family: "Cambay", sans-serif;
+  font-size: 16px;
+  color: white;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

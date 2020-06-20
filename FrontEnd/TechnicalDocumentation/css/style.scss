@@ -1,0 +1,184 @@
+$gray: #EBEBF1;
+$margin: 20px;
+$margin-double: 40px;
+$margin-triple: 60px;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@mixin border-radius() {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+
+@mixin fonts-code($size, $height: false) {
+	font-family: Menlo, monospace;
+	font-size: $size;
+	@if $height != false {
+		line-height: $height;
+	}
+}
+
+@mixin fonts-reg($size, $height: false) {
+	font-family: system-ui, 'Roboto', sans-serif;
+	font-size: $size;
+	@if $height != false {
+		line-height: $height;
+	}
+}
+
+@mixin overflow-x() {
+	-ms-overflow-x: auto;
+	overflow-x: auto;
+}
+
+@mixin overflow-y() {
+	-ms-overflow-y: auto;
+	overflow-y: auto;
+}
+
+a {
+	color: darkblue;
+	text-decoration: none;
+}
+
+article {
+	li {
+		margin: 0 $margin-double;
+	}
+}
+
+body {
+	margin: 0;
+}
+
+code,
+samp {
+	@include fonts-code(10px, 2em);
+}
+
+footer {
+	@include fonts-reg(12px, 2em);
+	margin: $margin auto;
+	text-align: center;
+}
+
+header {
+	@include fonts-reg(18px);
+	margin: 0 auto 0 $margin;
+	padding-top: $margin;
+}
+
+hr {
+	margin-top: $margin;
+}
+
+img {
+	display: block;
+	height: auto;
+	margin: $margin auto 0 auto;
+	width: 50vw;
+}
+
+li {
+	@include fonts-reg(12px, 2em);
+}
+
+nav {
+	@include overflow-y();
+	background-color: $gray;
+	li {
+		margin-left: $margin;
+	}
+}
+
+p {
+	@include fonts-reg(12px, 2em);
+	margin: $margin $margin-double 0 $margin-double;
+}
+
+pre {
+	@include border-radius();
+	@include overflow-x();
+	background-color: $gray;
+	margin: $margin $margin-triple 0 $margin-triple;
+	
+	padding: 1em;
+}
+
+.blue {
+	color: #1C00CF;
+}
+
+.green {
+	color: #007400;
+}
+
+.green-dark {
+	color: #3F6E74;
+}
+
+.pink {
+	color: #AA0D91;
+}
+
+.purple {
+	color: #5C2699;
+}
+
+.red {
+	color: #C41A16;
+}
+
+@media screen and (min-width: 385px) {
+	code,
+	samp {
+		font-size: 2.6vw;
+	}
+
+	footer,
+	li,
+	p {
+		font-size: 3.2vw;
+	}
+
+	header {
+		font-size: 4.8vw;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	code,
+	samp {
+		font-size: 13px;
+	}
+
+	footer,
+	li,
+	p {
+		font-size: 16px;
+	}
+
+	header {
+		font-size: 24px;
+	}
+
+	img {
+		width: 250px;
+	}
+}
+
+@media screen and (min-width: 782px) {
+	footer,
+	main {
+		margin-left: 282px;
+	}
+
+	nav {
+		height: 100%;
+		position: fixed;
+		top: 0;
+		width: 282px;
+	}
+}

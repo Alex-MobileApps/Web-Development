@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Crash Bandicoot Survey</title>
+</head>
+<body>
+
+<!--HEADER------------------------------------------------------------------------------->
+
+	<header>
+		<h1 id="title">Crash Bandicoot Survey</h1>
+		<p id="description">Let us know what you think of the game!</p>
+	</header>
+
+<!--MAIN--------------------------------------------------------------------------------->
+
+	<main>
+		<form id="survey-form">
+			
+<!--PERSONAL QUESTIONS------------------------------------------------------------------->
+
+				<div>
+				<h2>Personal Questions</h2>
+				<div>
+					<label id="name-label" for="name">Name*</label>
+					<br>
+					<input class="textfield" type="text" name="name" id="name" placeholder="Enter your name" required>
+					<br>
+					<label id="email-label" for="email">Email*</label>
+					<br>
+					<input class="textfield" type="email" name="email" id="email" placeholder="Enter your email address" required>
+					<br>
+					<label id="number-label" for="number">Age*</label>
+					<br>
+					<input class="textfield" type="number" name="age" id="number" placeholder="Enter your age" min="1" max="99" required>
+					<br>
+					<label id="dropdown-platform" for="platform">Platform</label>
+					<br>
+								<select id="dropdown" name="platform">
+										<option selected disabled>Select your platform</option>
+										<option value="0">Microsoft Windows</option>
+										<option value="1">PlayStation 4</option>
+										<option value="2">Xbox One</option>
+										<option value="3">Nintendo Switch</option>
+								</select>
+				</div>
+			</div>
+			<hr>
+
+<!--WHICH REMASTER WAS YOUR FAVOURITE---------------------------------------------------->
+
+			<div>
+				<h2>Which remaster was your favourite?</h2>
+				<div>
+					<input type="radio" name="favourite" id="one" value="one" checked>
+					<label for="one">Crash Bandicoot</label>
+					<br>
+					<input type="radio" name="favourite" id="two" value="two">
+					<label for="two">Crash Bandicoot 2: Cortex Strikes Back</label>
+					<br>
+					<input type="radio" name="favourite" id="three" value="three">
+					<label for="three">Crash Bandicoot: Warped</label>
+				</div>
+			</div>
+			<hr>
+
+<!--WHAT COULD BE INMPROVED IN THE GAME-------------------------------------------------->
+
+			<div>
+				<h2>What could be improved in the game?</h2>
+				<input type="checkbox" name="improve" id="audio" value="audio">
+				<label for="audio">Audio</label>
+				<br>
+				<input type="checkbox" name="improve" id="controls" value="controls">
+				<label for="controls">Controls</label>
+				<br>
+				<input type="checkbox" name="improve" id="graphics" value="graphics">
+				<label for="graphics">Graphics</label>
+				<br>
+				<input type="checkbox" name="improve" id="content" value="content">
+				<label for="content">New Content</label>
+			</div>
+			<hr>
+
+<!--COMMENTS ABOUT THE GAME-------------------------------------------------------------->
+
+			<div>
+				<h2>Comments about the game?</h2>
+				<textarea class="textfield" name="comments" id="comments" placeholder="Enter your comments" rows="5"></textarea>
+			</div>
+			<div>
+				<button type="submit" id="submit">Submit</button>
+			</div>
+		</form>
+	</main>
+
+<!--FOOTER------------------------------------------------------------------------------->
+
+	<footer>
+		<p>Background image from <a href="https://www.trustedreviews.com/reviews/crash-bandicoot-n-sane-trilogy-nintendo-switch" target="_blank">trustedreviews.com</a><br>Created by Alex</p>
+	</footer>
+</body>
+</html>

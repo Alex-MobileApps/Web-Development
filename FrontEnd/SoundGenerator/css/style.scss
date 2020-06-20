@@ -1,0 +1,246 @@
+$box-shadow: 0 1px 2px #4D4D4D;
+$box-shadow-large: 10px 20px 30px #006464;
+$box-shadow-large-light: 10px 20px 30px #8FC7DF;
+$color-background: #82B4C3;
+$color-aqua: #00C8C8;
+$color-blue: #318AB0;
+$color-gray: #EBEBF1;
+$height-control: 30px;
+$margin: 20px;
+
+@mixin align-items($align) {
+	-webkit-align-items: $align;
+	align-items: $align;
+}
+
+@mixin background-size($size) {
+	-webkit-background-size: $size;
+	-moz-background-size: $size;
+	-o-background-size: $size;
+	background-size: $size;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-o-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin box-sizing($sizing) {
+	-webkit-box-sizing: $sizing;
+	-moz-box-sizing: $sizing;
+	-o-box-sizing: $sizing;
+	box-sizing: $sizing;
+}
+
+@mixin flex-direction($direction) {
+	-webkit-flex-direction: $direction;
+	-moz-flex-direction: $direction;
+	-o-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+@mixin font($size) {
+	font-family: 'Martel Sans', sans-serif;
+	font-size: $size;
+}
+
+@mixin justify-content($justify) {
+	-webkit-justify-content: $justify;
+	-moz-justify-content: $justify;
+	-o-justify-content: $justify;
+	justify-content: $justify;
+}
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-o-transform: $transform;
+	transform: $transform;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	@include background-size(cover);
+	background-attachment: fixed;
+	background-color: $color-background;
+	background-image: url("https://live.staticflickr.com/65535/49490345893_57c57550e6_b.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+}
+
+#drum-machine {
+	@include box-shadow($box-shadow-large-light);
+	@include flex-direction(column);
+	background-color: $color-blue;
+	border: 3px solid $color-aqua;
+	display: flex;
+	height: 488px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 288px;
+}
+
+#drum-grid {
+	@include box-sizing(border-box);
+	display: grid;
+	grid-gap: $margin;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repear(3, auto);
+	height: 288px;
+	padding: $margin;
+	width: 288px;
+}
+
+.drum-pad {
+	@include align-items(center);
+	@include border-radius(5px);
+	@include font(16px);
+	@include justify-content(center);
+	background-color: $color-gray;
+	display: flex;
+}
+
+.drum-pad:hover {
+	@include box-shadow($box-shadow-large);
+	background-color: $color-aqua;
+	color: white;
+}
+
+#drum-settings {
+	@include box-sizing(border-box);
+	@include justify-content(center);
+	@include flex-direction(column);
+	display: flex;
+	height: 200px;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: $margin;
+	width: 288px;
+}
+
+p {
+	@include align-items(center);
+	@include justify-content(center);
+	@include font(16px);
+	color: white;
+	display: flex;
+	padding-left: $margin;
+}
+
+#display {
+	@include border-radius(5px);
+	background-color: $color-gray;
+	color: black;
+	height: calc(2 * #{$height-control});
+}
+
+.control {
+	@include justify-content(space-between);
+	@include align-items(center);
+	display: flex;
+	height: $height-control;
+	margin-top: $margin;
+}
+
+.controlOn,
+.controlOff {
+	@include border-radius(15px);
+	height: $height-control;
+	width: 50px;
+}
+
+.controlOn {
+	background-color: $color-aqua;
+}
+
+.controlOff {
+	background-color: $color-gray;
+}
+
+.controlLeft,
+.controlRight {
+	@include border-radius(14px);
+	@include box-shadow($box-shadow);
+	background-color: white;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	height: 28px;
+	width: 28px;
+}
+
+.controlLeft {
+	margin-left: 1px;
+	margin-right: auto;
+}
+
+.controlRight {
+	margin-left: auto;
+	margin-right: 1px;
+}
+
+@media screen and (min-width: 288px) {
+	#drum-machine {
+		left: 50%;
+	}
+}
+
+@media screen and (min-width: 576px) {
+	#drum-machine {
+		@include flex-direction(row);
+		height: 288px;
+		width: 576px;
+	}
+}
+
+@media screen and (min-height: 488px) {
+	#drum-machine {
+		top: 50%;
+	}
+}
+
+@media screen and (max-width: 288px) and (min-height: 488px) {
+	#drum-machine {
+		@include transform(translateY(-50%));
+	}
+}
+
+@media screen and (min-width: 288px) and (max-height: 488px) {
+	#drum-machine {
+		@include transform(translateX(-50%));
+	}
+}
+
+@media screen and (min-width: 288px) and (min-height: 488px) {
+	#drum-machine {
+		@include transform(translate(-50%, -50%));
+	}
+}
+
+@media screen and (min-width: 576px) and (max-height: 288px) {
+	#drum-machine {
+		@include transform(translateX(-50%));
+	}
+}
+
+@media screen and (min-width: 576px) and (min-height: 288px) {
+	#drum-machine {
+		@include transform(translate(-50%, -50%));
+		top: 50%;
+	}
+}

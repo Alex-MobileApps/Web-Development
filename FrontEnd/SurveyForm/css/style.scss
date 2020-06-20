@@ -1,0 +1,155 @@
+$brown: #BF8640;
+$margin-small: 0 auto var(--margin-small) auto;
+
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+		
+@mixin fonts($size, $align: false) {
+	font-family: 'Raleway', sans-serif;
+	font-size: $size;
+	@if $align != false {
+		text-align: $align;
+	}
+}
+
+@mixin background-size() {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin borders() {
+	@include border-radius(0.5em);
+	border-style: none;
+}
+
+:root {
+	--h1-size: 3.2vw;
+	--h2-size: 2.4vw;
+	--margin-small: 2vw;
+	--p-size: 1.6vw;
+}
+
+a {
+	color: white;
+}
+
+body {
+	margin: 0;
+}
+
+button {
+	@include borders();
+	@include fonts(var(--h2-size));
+	background-color: $brown;
+	color: white;
+	margin: $margin-small;
+	padding: 0.5em;
+	width: 100%;
+}
+
+button:hover {
+	background-color: #4079BF;
+} 
+
+h1 {
+	@include fonts(var(--h1-size), center);
+	color: white;
+	margin: 0 auto;
+}
+
+h2 {
+	@include fonts(var(--h2-size));
+	color: white;
+	margin: $margin-small;
+}
+
+header,
+footer {
+	background-color: $brown;
+	padding: var(--margin-small) 0;
+}
+
+hr {
+	margin: var(--margin-small) -10vw calc(2 * var(--margin-small)) -10vw;
+}
+
+input {
+	@include fonts(var(--p-size));
+	margin: $margin-small;
+	padding: 0.5em;
+}
+
+label {
+	@include fonts(var(--p-size));
+	color: white;
+	display: inline-block;
+	margin: $margin-small;
+}
+
+main {
+	@include background-size();
+	background-image: url(https://ksassets.timeincuk.net/wp/uploads/sites/54/2018/07/860072-1.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: var(--margin-small) 10vw;
+}
+
+p {
+	@include fonts(var(--p-size), center);
+	color: white;
+	line-height: 2em;
+	margin: 0 auto;
+}
+
+select {
+	@include borders();
+	@include fonts(var(--p-size));
+	background-color: white;
+	height: 2em;
+	margin: $margin-small;
+	width: 100%; 
+}
+
+textarea {
+	@include fonts(var(--p-size));
+	margin: $margin-small;
+	padding: 0.5em;
+	resize: none;
+}
+
+.textfield {
+	@include borders();
+	width: calc(100% - 1em);
+}
+
+#survey-form {
+	@include border-radius(var(--margin-small));
+	background-color: rgba(27, 27, 50, 0.8);
+	padding: var(--margin-small) 10vw;
+}
+
+@media screen and (max-width: 625px) {
+	:root {
+		--h1-size: 20px;
+		--h2-size: 15px;
+		--margin-small: 12px;
+		--p-size: 10px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	:root {
+		--h1-size: 32px;
+		--h2-size: 24px;
+		--margin-small: 20px;
+		--p-size: 16px;
+	}
+}

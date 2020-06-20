@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+:root {
+  --height-header: 50px;
+  --width-about: 700px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+}
+
+footer {
+  background-color: #00AAAA;
+  color: white;
+  padding: 1em;
+}
+
+form {
+  margin: 20px 20px 0 20px;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  margin: auto 20px;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin: 20px auto 0 auto;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  height: var(--height-header);
+  position: fixed;
+  width: 100%;
+}
+
+hr {
+  margin-top: 20px;
+}
+
+iframe {
+  display: block;
+  height: calc(0.5625 * var(--width-about));
+  margin: 20px auto 0 auto;
+  max-width: 100%;
+  width: var(--width-about);
+}
+
+input {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 20px auto 0 auto;
+}
+
+label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+main {
+  margin-top: var(--height-header);
+  padding-bottom: 20px;
+}
+
+nav {
+  background-color: #009999;
+  height: 50px;
+  width: 35%;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.about-img {
+  display: block;
+  height: 50px;
+  margin: auto 0 auto 20px;
+  width: 50px;
+}
+
+.about-internal-div,
+.pricing-internal-div {
+  margin: 20px;
+}
+
+.about-section {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 10px 20px #7D7D7D;
+  -moz-box-shadow: 0 10px 20px #7D7D7D;
+  -o-box-shadow: 0 10px 20px #7D7D7D;
+  box-shadow: 0 10px 20px #7D7D7D;
+  background-color: #EBEBF1;
+  display: flex;
+  margin: 20px auto 0 auto;
+  max-width: var(--width-about);
+  width: 100%;
+}
+
+.li-nav {
+  margin: auto;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.offset {
+  margin-top: calc(-1 * var(--height-header));
+  padding-top: var(--height-header);
+}
+
+.pricing-li {
+  list-style: none;
+  margin: 0 20px;
+}
+
+.pricing-section {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  border-style: none;
+  -webkit-box-shadow: 0 10px 20px #7D7D7D;
+  -moz-box-shadow: 0 10px 20px #7D7D7D;
+  -o-box-shadow: 0 10px 20px #7D7D7D;
+  box-shadow: 0 10px 20px #7D7D7D;
+  background-color: #EBEBF1;
+}
+
+#about-div {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#email {
+  display: block;
+  padding: 0.5em;
+}
+
+#header-img {
+  display: block;
+  height: 40px;
+  margin: 5px 0 50px 20px;
+  width: auto;
+}
+
+#header-left {
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  background-color: #00AAAA;
+  display: flex;
+  height: 50px;
+  width: 65%;
+}
+
+#pricing-grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 20px 20px 0 20px;
+}
+
+#submit {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  border-style: none;
+  background-color: #00AAAA;
+  color: white;
+  display: block;
+  padding: 1em;
+}
+
+#submit:hover {
+  background-color: #009999;
+}
+
+#ul-nav {
+  display: flex;
+  height: 100%;
+  list-style: none;
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    --height-header: 100px;
+    --width-about: calc(100vw - 40px);
+  }
+
+  header {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+  }
+
+  nav,
+#header-left {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .about-img {
+    margin: 20px auto 0 auto;
+  }
+
+  .about-section {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

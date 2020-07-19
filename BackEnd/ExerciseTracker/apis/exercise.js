@@ -22,6 +22,8 @@ exports.log = (req, res, next) => {
   const fromValid = !isNaN(from.getTime());
   const to = new Date(query.to);
   const toValid = !isNaN(to.getTime());
+  let limit = query.limit;
+  if (limit) limit = parseInt(limit);
   User.findById(query.userId, (err1, user) => {
     if (err1) return next(err1);
     if (!user) {
@@ -37,7 +39,7 @@ exports.log = (req, res, next) => {
       }
     })
       .sort("-date")
-      .limit(query.limit)
+      .limit(limit)
       .exec((err, exercises) => {
         if (err) return next(err);
         res.json({
